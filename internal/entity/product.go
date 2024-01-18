@@ -2,6 +2,11 @@ package entity
 
 import "github.com/google/uuid"
 
+type ProductRepository interface {
+	Create(Product *Product) error
+	FindAll() ([]*Product, error)
+}
+
 type Product struct {
 	ID    string
 	Name  string
